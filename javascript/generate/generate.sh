@@ -2,14 +2,32 @@
 
 if [[ ${#1} -eq 0 ]]; then
     echo
+    echo "[ERROR] generate folder file path not specified"
+    exit 1
+fi
+
+if [[ ${#2} -eq 0 ]]; then
+    echo
+    echo "[ERROR] output folder file path not specified"
+    exit 1
+fi
+
+if [[ ${#3} -eq 0 ]]; then
+    echo
     echo "[ERROR] swagger file not specified"
     exit 1
 fi
 
-gen_root=/usr/src
-sdk_output_folder=$gen_root/sdk
-swagger_file=$gen_root/$1
-config_file=$gen_root/config.json
+gen_root=/usr/src/$1
+output_folder=/usr/src/$2
+swagger_file=$output_folder/$3
+
+sdk_output_folder=$output_folder/sdk
+
+ignore_file_name=.openapi-generator-ignore
+config_file_name=config.json
+config_file=$gen_root/$config_file_name
+ignore_file=$gen_root/$ignore_file_name
 
 #   remove all previously generated files
 shopt -s extglob
@@ -24,10 +42,10 @@ shopt -u extglob
 sdk_version=$(cat $swagger_file | jq -r '.info.version')
 cat $config_file | jq -r --arg SDK_VERSION "$sdk_version" '.packageVersion |= $SDK_VERSION' > temp && mv temp $config_file
 
-cp .openapi-generator-ignore $sdk_output_folder
+cp $ignore_file $sdk_output_folder
 
 echo "generating sdk"
-java -jar /usr/swaggerjar/openapi-generator-cli.jar generate \
+java -jar /usr/src/openapi-generator-cli.jar generate \
     -i $swagger_file \
     -g typescript-node \
     -o $sdk_output_folder \
@@ -37,7 +55,7 @@ java -jar /usr/swaggerjar/openapi-generator-cli.jar generate \
 # update package.json
 cat $sdk_output_folder/package.json | jq -r --arg SDK_VERSION "$sdk_version" '.version |= $SDK_VERSION' > temp && mv temp $sdk_output_folder/package.json
 
-cd $gen_root/sdk
+cd $sdk_output_folder
 
 # workarounds for known issue - https://github.com/OpenAPITools/openapi-generator/issues/1139
 echo "import { InstrumentDefinition } from '../model/instrumentDefinition';" > api/_instrumentsApi.ts
@@ -56,7 +74,7 @@ mv api/_portfoliosApi.ts api/portfoliosApi.ts
 cd ..
 
 rm -rf $sdk_output_folder/.openapi-generator/
-rm -f $sdk_output_folder/.openapi-generator-ignore
+rm -f $sdk_output_folder/$ignore_file_name
 rm -f $sdk_output_folder/README.md
 rm -f $sdk_output_folder/.travis.yml
 rm -f $sdk_output_folder/git_push.sh
