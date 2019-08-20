@@ -45,7 +45,7 @@ cat $config_file | jq -r --arg SDK_VERSION "$sdk_version" '.packageVersion |= $S
 cp $ignore_file $sdk_output_folder
 
 echo "generating sdk"
-java -jar $image_root/openapi-generator-cli.jar generate \
+java -jar openapi-generator-cli.jar generate \
     -i $swagger_file \
     -g typescript-node \
     -o $sdk_output_folder \
