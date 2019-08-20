@@ -18,8 +18,8 @@ if [[ ${#3} -eq 0 ]]; then
     exit 1
 fi
 
-gen_root=/usr/src/$1
-output_folder=/usr/src/$2
+gen_root=$1
+output_folder=$2
 swagger_file=$output_folder/$3
 
 sdk_output_folder=$output_folder/sdk
@@ -45,7 +45,7 @@ cat $config_file | jq -r --arg SDK_VERSION "$sdk_version" '.packageVersion |= $S
 cp $ignore_file $sdk_output_folder
 
 echo "generating sdk"
-java -jar /usr/src/openapi-generator-cli.jar generate \
+java -jar $image_root/openapi-generator-cli.jar generate \
     -i $swagger_file \
     -g typescript-node \
     -o $sdk_output_folder \
