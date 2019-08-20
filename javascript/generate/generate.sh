@@ -27,7 +27,7 @@ sdk_output_folder=$output_folder/sdk
 ignore_file_name=.openapi-generator-ignore
 config_file_name=config.json
 config_file=$gen_root/$config_file_name
-ignore_file=$gen_root/$ignore_file_name
+ignore_file=$output_folder/$ignore_file_name
 
 #   remove all previously generated files
 shopt -s extglob
