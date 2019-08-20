@@ -4,6 +4,4 @@ RUN mkdir -p /usr/src/
 RUN mkdir -p /usr/work/
 WORKDIR /usr/src/
 
-ADD publish.sh /usr/work
-
-ENTRYPOINT [ "/bin/bash", "/usr/work/publish.sh"]
+ENTRYPOINT [ "/bin/bash"]
