@@ -7,6 +7,4 @@ RUN mkdir -p /usr/work/
 
 WORKDIR /usr/src/sdk
 
-ADD publish.sh /usr/work
-
-ENTRYPOINT [ "/bin/bash", "/usr/work/publish.sh"]
+ENTRYPOINT [ "/bin/bash"]
