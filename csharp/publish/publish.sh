@@ -28,7 +28,7 @@ dotnet pack -c Release sdk/Lusid.Sdk/Lusid.Sdk.csproj
 
 test="$(find sdk/Lusid.Sdk/bin/Release/Lusid* -type f -printf "%f")"
 
-dotnet nuget push sdk/Lusid.Sdk/bin/Release/$test.${sdk_version}.nupkg \
+dotnet nuget push sdk/Lusid.Sdk/bin/Release/$test \
     --source $repo_url \
     --api-key $api_key
 
