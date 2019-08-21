@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:2.0-sdk
+FROM finbourne/dotnetcoresdk-awscli
 
 RUN mkdir -p /usr/src/
 RUN mkdir -p /usr/work/
