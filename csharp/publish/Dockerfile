@@ -1,4 +1,4 @@
-FROM 707585552459.dkr.ecr.eu-west-1.amazonaws.com/dotnetcoresdk-awscli
+FROM FROM microsoft/dotnet:2.0-sdk
 
 RUN mkdir -p /usr/src/
 RUN mkdir -p /usr/work/
