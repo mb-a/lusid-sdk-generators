@@ -33,3 +33,5 @@ npm pack
 npm publish --registry=https://$repo_url --access public
 
 cd ..
+
+rm -f publish.sh

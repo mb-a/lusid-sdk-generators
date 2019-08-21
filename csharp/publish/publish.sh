@@ -28,3 +28,5 @@ dotnet pack -c Release sdk/Lusid.Sdk/Lusid.Sdk.csproj
 dotnet nuget push sdk/Lusid.Sdk/bin/Release/Lusid.Sdk.${sdk_version}.nupkg \
     --source $repo_url \
     --api-key $api_key
+
+rm -f publish.sh

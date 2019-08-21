@@ -30,3 +30,5 @@ python setup.py bdist_wheel
 twine upload --repository-url $pypi_repo -u pypi -p $pypi_password dist/*
 
 cd ..
+
+rm -f publish.sh
