@@ -78,3 +78,4 @@ rm -f $sdk_output_folder/$ignore_file_name
 rm -f $sdk_output_folder/README.md
 rm -f $sdk_output_folder/.travis.yml
 rm -f $sdk_output_folder/git_push.sh
+rm -f $sdk_output_folder/.gitignore

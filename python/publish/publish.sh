@@ -1,6 +1,4 @@
-#!/bin/bash
-
-set -e
+#!/bin/bash -e
 
 if [[ (${#1} -eq 0) ]] ; then
     echo

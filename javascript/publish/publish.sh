@@ -31,3 +31,5 @@ echo "sdk_version=$sdk_version"
 
 npm pack
 npm publish --registry=https://$repo_url --access public
+
+cd ..
