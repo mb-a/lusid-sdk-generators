@@ -19,7 +19,7 @@ sdk_version=$(cat lusid.json | jq -r '.info.version')
 
 cd sdk
 
-# check the SDK builds
+# check the SDK does build
 npm install
 npm run build
 
