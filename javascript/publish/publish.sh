@@ -17,17 +17,17 @@ repo_url=$2
 
 sdk_version=$(cat lusid.json | jq -r '.info.version')
 
+cd sdk
+
 # check the SDK builds
 npm install
 npm run build
 
 cat > .npmrc <<EOF
-//$repo_url/:_authToken=$api_key
+//$repo_url:_authToken=$api_key
 EOF
 
 echo "sdk_version=$sdk_version"
 
 npm pack
-npm publish --access public
-
-
+npm publish --registry=https://$repo_url --access public
