@@ -1,4 +1,4 @@
 FROM node:slim
 
 RUN apt update
-RUN apt-get install -y -qq git
+RUN apt-get install -y -qq git && apt-get -y install jq
