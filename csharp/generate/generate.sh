@@ -55,7 +55,7 @@ java -jar openapi-generator-cli.jar generate \
     -g csharp \
     -o $sdk_output_folder \
     -c $config_file \
-    -t $output_folder/templates \
+    -t $gen_root/templates \
 	--type-mappings dateorcutlabel=DateTimeOrCutLabel
 
 rm -rf $sdk_output_folder/.openapi-generator

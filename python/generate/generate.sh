@@ -49,7 +49,7 @@ java -jar openapi-generator-cli.jar generate \
     -i $swagger_file \
     -g python \
     -o $sdk_output_folder \
-    -t $output_folder/templates \
+    -t $gen_root/templates \
     -c $config_file   
 
 # create a version file

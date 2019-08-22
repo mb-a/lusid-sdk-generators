@@ -47,7 +47,7 @@ java -jar openapi-generator-cli.jar generate \
     -g java \
     -o $sdk_output_folder \
     -c $config_file \
-    -t $output_folder/templates
+    -t $gen_root/templates
 
 # remove redundant generated build files
 rm -f $sdk_output_folder/.openapi-generator-ignore
