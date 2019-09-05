@@ -34,6 +34,8 @@ shopt -s extglob
 echo "removing previous sdk:"
 rm -rf $sdk_output_folder/docs/
 rm -rf $sdk_output_folder/src/
+rm -rf $sdk_output_folder/api/
+rm -rf $sdk_output_folder/model/
 rm -rf $sdk_output_folder/test/api/
 rm -rf $sdk_output_folder/test/model/
 shopt -u extglob
