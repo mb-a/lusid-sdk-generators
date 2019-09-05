@@ -2,4 +2,6 @@
 
 cd sdk
 
+npm install
+
 npm test

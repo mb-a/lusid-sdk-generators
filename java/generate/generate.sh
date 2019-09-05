@@ -68,3 +68,4 @@ rm -f $sdk_output_folder/src/main/AndroidManifest.xml
 sdk_version=$(cat $swagger_file | jq -r '.info.version')
 mvn -f $sdk_output_folder/pom.xml versions:set -DnewVersion=$sdk_version-SNAPSHOT
 rm -f $output_folder/.openapi-generator-ignore
+rm -f $sdk_output_folder/README.md
