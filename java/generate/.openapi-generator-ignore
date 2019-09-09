@@ -6,3 +6,4 @@
 **/test/integration/**
 **/test/resources/**
 **/pom.xml
+**/pom.xml.versionsBackup
