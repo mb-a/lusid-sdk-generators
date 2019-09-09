@@ -65,7 +65,47 @@ cat api/portfoliosApi.ts >> api/_portfoliosApi.ts
 rm api/portfoliosApi.ts
 mv api/_portfoliosApi.ts api/portfoliosApi.ts
 
-cd ..
+# Create the api class for intellisense to work
+cd api
+# Get all the apis available (needed for preview vs non-preview)
+apis=("$(ls -d *)")
+apis=( "${apis[@]/apis.ts}" )
+# Remove existing API class
+mkdir -p ../client
+cd ../client
+rm -f apis.ts
+# Create new file
+touch apis.ts
+
+# Iterate over each API and build the API class
+
+# Add the imports line by line
+for api in ${apis[@]}
+do
+   :
+   api="${api::-3}"
+   api_upper=${api^}
+   echo "$api_upper"
+   echo "import {$api_upper} from '../api/$api';" >> apis.ts
+done
+
+echo "" >> apis.ts
+echo "export class Api {" >> apis.ts
+
+# Add the class attributes line by line
+for api in ${apis[@]}
+do
+   :
+   api="${api::-3}"
+   api_short="${api::-3}"
+   api_upper="${api^}"
+   echo "    public $api_short:  $api_upper" >> apis.ts
+done
+
+echo "}" >> apis.ts
+
+# Move up directories for removal of files
+cd ../../../../
 
 rm -rf $sdk_output_folder/.openapi-generator/
 rm -f $sdk_output_folder/$ignore_file_name

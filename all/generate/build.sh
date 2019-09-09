@@ -17,7 +17,7 @@ cd ../../$1/generate
 # get the specificed swagger file
 curl -L $2 -o lusid.json
 
-mkdir -p output
+mkdir -p output/sdk
 
 cp .openapi-generator-ignore output/.openapi-generator-ignore
 mv lusid.json output/lusid.json
