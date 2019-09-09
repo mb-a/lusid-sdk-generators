@@ -19,8 +19,12 @@ curl -L $2 -o lusid.json
 
 mkdir -p output/sdk
 
+cp ../../all/generate/docker-compose.yml docker-compose.yml
+
 cp .openapi-generator-ignore output/.openapi-generator-ignore
 mv lusid.json output/lusid.json
 
 # build the sdk
 docker-compose build && docker-compose up && docker-compose rm -f
+
+rm -f docker-compose.yml

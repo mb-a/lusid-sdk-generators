@@ -2,9 +2,9 @@ version: "3"
 
 services:
   lusid-sdk-gen:
-    container_name: lusid-sdk-java-gen
+    container_name: lusid-sdk-gen
     build: ../../all/generate
-    image: finbourne/lusid-sdk-java-gen
+    image: finbourne/lusid-sdk-gen
     volumes:
       - .:/usr/src/generate
     command: ./generate/generate.sh ./generate ./generate/output lusid.json
