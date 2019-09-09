@@ -71,8 +71,8 @@ cd api
 apis=("$(ls -d *)")
 apis=( "${apis[@]/apis.ts}" )
 # Remove existing API class
-mkdir -p ../client
-cd ../client
+
+cd ../
 rm -f apis.ts
 # Create new file
 touch apis.ts
@@ -86,7 +86,7 @@ do
    api="${api::-3}"
    api_upper=${api^}
    echo "$api_upper"
-   echo "import {$api_upper} from '../api/$api';" >> apis.ts
+   echo "import {$api_upper} from './api/$api';" >> apis.ts
 done
 
 echo "" >> apis.ts
@@ -105,7 +105,7 @@ done
 echo "}" >> apis.ts
 
 # Move up directories for removal of files
-cd ../../../../
+cd ../../../
 
 rm -rf $sdk_output_folder/.openapi-generator/
 rm -f $sdk_output_folder/$ignore_file_name
