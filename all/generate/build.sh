@@ -28,8 +28,14 @@ cp -R $output_folder/ ./output
 
 rm -rf ./output/.git
 
-# get the specificed swagger file
-curl -L $2 -o lusid.json
+if [[ $2 == *"http"* ]]; then
+    echo "Using Swagger URL"
+    # get the specificed swagger file
+    curl -L $2 -o lusid.json
+else
+    echo "No http in provided name, using local file"
+    cp -f $2 lusid.json
+fi
 
 cp ../../all/generate/docker-compose.yml docker-compose.yml
 
