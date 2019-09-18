@@ -24,7 +24,7 @@ cd ../../$1/generate
 
 mkdir -p output/sdk
 
-cp -R $output_folder/ ./output
+cp -R $output_folder/* ./output/
 
 rm -rf ./output/.git
 
@@ -40,6 +40,7 @@ fi
 cp ../../all/generate/docker-compose.yml docker-compose.yml
 
 cp .openapi-generator-ignore output/.openapi-generator-ignore
+
 mv lusid.json output/lusid.json
 
 # build the sdk
@@ -47,5 +48,6 @@ docker-compose build && docker-compose up && docker-compose rm -f
 
 rm -f docker-compose.yml
 
-cp -R ./output/. $output_folder
+cp -R ./output/* $output_folder/
+
 rm -rf output
