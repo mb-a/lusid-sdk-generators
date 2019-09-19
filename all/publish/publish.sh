@@ -37,13 +37,18 @@ mkdir -p input/sdk
 
 cp -R $input_folder/* ./input
 
-cp publish.sh ./input/sdk
 
-cd ./input/sdk
+ls
 
-docker run -v /$(pwd):/usr/src/sdk/ finbourne/lusid-sdk-$1-publish publish.sh $3 $4
+cp publish.sh ./input
 
-cd ../../
+cd ./input
+
+ls
+
+docker run -v /$(pwd):/usr/src/ finbourne/lusid-sdk-$1-publish publish.sh $3 $4
+
+cd ../
 
 rm -rf input
 

@@ -41,7 +41,8 @@ These are also used in the pipeline so if you would like to update the way the S
 If you would like to publish a generated SDK, please do the following:
 
 1) Ensure that you have already checked out the project that you want to publish an SDK for e.g. https://github.com/finbourne/lusid-sdk-csharp
-2) If publishing a new SDK, ensure that you have already generated the SDK following the instructions above and set the version to have your initials at the end e.g. `0.10.705-MM`
+2) If publishing a new SDK, ensure that you have already generated the SDK following the instructions above and set the version to have your initials at the end e.g. `0.10.705-MM`. You will
+want to ensure the version is set in the appropriate file e.g. package.json, __version__.py etc. and in the swagger file you used to generate the SDK
 2) Navigate to the `/all/publish` directory in the lusid-sdk-generators (this) repo
 3) Run the publish.sh script passing in the following variables
 
