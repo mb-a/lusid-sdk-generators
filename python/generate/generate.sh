@@ -57,6 +57,8 @@ cat << EOF > $sdk_output_folder/lusid/__version__.py
 __version__ = "$sdk_version"
 EOF
 
+
+
 rm -rf $sdk_output_folder/.openapi-generator/
 rm -rf $sdk_output_folder/test/
 rm -f $sdk_output_folder/.openapi-generator-ignore
