@@ -5,6 +5,6 @@
   "useDateTimeOffset": true,
   "netCoreProjectFile": true,
   "returnICollection": true,
-  "packageVersion": "0.10.870",
+  "packageVersion": "0.10.881",
   "excludeTests": true
 }
