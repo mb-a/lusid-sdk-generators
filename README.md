@@ -1,3 +1,5 @@
+![LUSID_by_Finbourne](https://content.finbourne.com/LUSID_repo.png)
+
 This repository contains the generation and publishing logic for each of the LUSID SDKs currently there are SDKs for:
 - Python
 - Java
