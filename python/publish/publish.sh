@@ -22,7 +22,7 @@ cd sdk
 api_version=$(cat lusid/__init__.py | grep __version__ |  awk '{split($0, a, "="); print a[2]}' | tr -d ' "')
 
 # packages to install
-pip install twine wheel pyOpenSSL
+pip install twine wheel cryptography==3.3.1 pyOpenSSL
 python setup.py sdist
 python setup.py bdist_wheel
 
