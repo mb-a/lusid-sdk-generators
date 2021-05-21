@@ -18,17 +18,10 @@ from {{packageName}}.exceptions import OpenApiException
 from {{packageName}}.exceptions import ApiTypeError
 from {{packageName}}.exceptions import ApiValueError
 from {{packageName}}.exceptions import ApiKeyError
-from {{packageName}}.exceptions import ApiAttributeError
 from {{packageName}}.exceptions import ApiException
 # import models into sdk package
 {{#models}}{{#model}}from {{modelPackage}}.{{classFilename}} import {{classname}}
 {{/model}}{{/models}}
-{{#recursionLimit}}
-
-__import__('sys').setrecursionlimit({{{.}}})
-{{/recursionLimit}}__version__ = "{{packageVersion}}"
-
-
 # import utilities into sdk package
 from {{packageName}}.utilities.api_client_builder import ApiClientBuilder
 from {{packageName}}.utilities.api_configuration import ApiConfiguration

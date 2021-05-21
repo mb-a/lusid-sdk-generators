@@ -39,19 +39,19 @@ class {{classname}}(object):
     """
     openapi_types = {
 {{#vars}}
-        '{{name}}': '{{{dataType}}}'{{#hasMore}},{{/hasMore}}
+        '{{name}}': '{{{dataType}}}'{{^-last}},{{/-last}}
 {{/vars}}
     }
 
     attribute_map = {
 {{#vars}}
-        '{{name}}': '{{baseName}}'{{#hasMore}},{{/hasMore}}
+        '{{name}}': '{{baseName}}'{{^-last}},{{/-last}}
 {{/vars}}
     }
 
     required_map = {
 {{#vars}}
-        '{{name}}': '{{^required}}optional{{/required}}{{#required}}required{{/required}}'{{#hasMore}},{{/hasMore}}
+        '{{name}}': '{{^required}}optional{{/required}}{{#required}}required{{/required}}'{{^-last}},{{/-last}}
 {{/vars}}
     }
 {{#discriminator}}
