@@ -68,7 +68,7 @@ class {{classname}}(object):
 
         {{#vars}}
         :param {{name}}: {{#description}} {{{description}}}{{/description}}{{#required}} (required){{/required}}{{#optional}}(optional{{#defaultValue}}, default to {{{.}}}{{/defaultValue}}){{/optional}}
-        :type {{name}}: {{^complexType}}{{dataType}}{{/complexType}}{{#complexType}}{{^isContainer}}{{packageName}}.{{complexType}}{{/isContainer}}{{#isListContainer}}list[{{packageName}}.{{complexType}}]{{/isListContainer}}{{#isMapContainer}}dict[str, {{packageName}}.{{complexType}}]{{/isMapContainer}}{{/complexType}}
+        :type {{name}}: {{#isPrimitiveType}}{{dataType}}{{/isPrimitiveType}}{{^isPrimitiveType}}{{dataType}}{{/isPrimitiveType}}
         {{/vars}}
 
         """  # noqa: E501
