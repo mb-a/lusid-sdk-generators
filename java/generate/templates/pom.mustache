@@ -229,7 +229,47 @@
                 </plugins>
             </build>
         </profile>
+
+        <profile>
+            <id>ossrh</id>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>        
+                <repository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+
+        <profile>
+            <id>finbourne-nexus</id>
+             <distributionManagement>
+                <snapshotRepository>
+                    <id>finbourne-nexus</id>
+                    <url>https://nexus.finbourne.com/repository/maven/</url>
+                </snapshotRepository>        
+                <repository>
+                    <id>finbourne-nexus</id>
+                    <url>https://nexus.finbourne.com/repository/maven/</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+
     </profiles>
+
+    <repositories>
+        <repository>
+            <id>osssrh</id>
+            <name>OSSRH</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
