@@ -52,7 +52,6 @@ java -jar openapi-generator-cli.jar generate \
     -g typescript-node \
     -o $sdk_output_folder \
     -c $config_file \
-    -t $gen_root/templates \
     --additional-properties supportsES6=true
 
 # update package.json
@@ -115,4 +114,3 @@ rm -f $sdk_output_folder/.travis.yml
 rm -f $sdk_output_folder/git_push.sh
 rm -f $sdk_output_folder/.gitignore
 rm -f $output_folder/.openapi-generator-ignore
-           
