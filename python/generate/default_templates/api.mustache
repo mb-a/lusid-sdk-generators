@@ -244,17 +244,11 @@ class {{classname}}(object):
         header_params['Accept'] = self.api_client.select_header_accept(
             [{{#produces}}'{{{mediaType}}}'{{^-last}}, {{/-last}}{{/produces}}])  # noqa: E501
 
-        header_params['Accept-Encoding'] = "gzip, deflate, br"
-
         {{/hasProduces}}
         {{#hasConsumes}}
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             [{{#consumes}}'{{{mediaType}}}'{{^-last}}, {{/-last}}{{/consumes}}])  # noqa: E501
-
-        # set the LUSID header
-        header_params['X-LUSID-SDK-Language'] = 'Python'
-        header_params['X-LUSID-SDK-Version'] = '{{packageVersion}}'
 
         {{/hasConsumes}}
         # Authentication setting
