@@ -63,6 +63,8 @@ rm -f $sdk_output_folder/gradlew
 rm -f $sdk_output_folder/gradlew.bat
 rm -f $sdk_output_folder/settings.gradle
 rm -f $sdk_output_folder/src/main/AndroidManifest.xml
+rm -rf $sdk_output_folder/src/test/java/com/finbourne/lusid/api
+rm -rf $sdk_output_folder/src/test/java/com/finbourne/lusid/model
 
 # update pom version
 sdk_version=$(cat $swagger_file | jq -r '.info.version')
