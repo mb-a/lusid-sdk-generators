@@ -333,24 +333,22 @@ namespace {{packageName}}.Client
             {
                 if (options.Data is Stream stream)
                 {
-                    var contentType = "application/octet-stream";
-                    if (options.HeaderParameters != null)
-                    {
-                        var contentTypes = options.HeaderParameters["Content-Type"];
-                        contentType = contentTypes[0];
-                    }
+                    var defaultContentType = "application/octet-stream";
+                    var contentType = 
+                        (options.HeaderParameters == null) ? 
+                        defaultContentType : 
+                        options.HeaderParameters["Content-Type"][0];
 
                     var bytes = ClientUtils.ReadAsBytes(stream);
                     request.AddParameter(contentType, bytes, ParameterType.RequestBody);
                 }
                 else if (options.Data is byte[])
                 {
-                    var contentType = "application/octet-stream";
-                    if (options.HeaderParameters != null)
-                    {
-                        var contentTypes = options.HeaderParameters["Content-Type"];
-                        contentType = contentTypes[0];
-                    }
+                    var defaultContentType = "application/octet-stream";
+                    var contentType = 
+                        (options.HeaderParameters == null) ? 
+                        defaultContentType : 
+                        options.HeaderParameters["Content-Type"][0];
 
                     var bytes = options.Data;
                     request.AddParameter(contentType, bytes, ParameterType.RequestBody);
