@@ -1,31 +1,5 @@
 #!/bin/bash -e
 
-if [[ ${#1} -eq 0 ]]; then
-    echo
-    echo "No language specified"
-    exit 1
-fi
-
-if [[ ${#2} -eq 0 ]]; then
-    echo
-    echo "[ERROR] url for swagger file not specified"
-    exit 1
-fi
-
-if [[ ${#3} -eq 0 ]]; then
-    echo
-    echo "[ERROR] output folder not specified"
-    exit 1
-fi
-
-sdk_lang=$1
-swagger_source=$2
-output_folder=$3
-
-# temporarily remove the passed in args
-shift   # lang
-shift   # url
-shift   # output
 
 usage()
 {
