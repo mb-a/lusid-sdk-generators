@@ -37,7 +37,7 @@ If you would like to generate an SDK using a custom swagger.json file, please do
     or
 
     ```
-    sh generate.sh -l csharp -f https://fbn-prd.lusid.com/api/swagger/v0/swagger.json -o ../../../work/projects/lusid-sdk-csharp -n lusid -s lusid.json
+    sh generate.sh -l csharp -u https://fbn-prd.lusid.com/api/swagger/v0/swagger.json -o ../../../work/projects/lusid-sdk-csharp -n lusid -s lusid.json
     ```
     
     P.S. Please note you will need Docker installed and running to use the build.sh script
