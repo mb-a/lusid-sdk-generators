@@ -13,11 +13,12 @@ usage()
     echo "  -s  filename to save swagger file to"
     echo "  -n  SDK name"
     echo "  -c  SDK generation configuration file (optional)"
+    echo "  -i  SDK generation ignore file (optional)"
     echo
     exit 1
 }
 
-while getopts 'l:u:f:s:o:n:c:' opt
+while getopts 'l:u:f:s:o:n:c:i:' opt
 do
   case $opt in
     l) lang=$OPTARG ;;
@@ -27,6 +28,7 @@ do
     s) swagger_file=$OPTARG ;;
     n) sdk_name=$OPTARG ;;
     c) config_file=$OPTARG ;;
+    i) ignore_file=$OPTARG ;;
   esac
 done
 
@@ -64,7 +66,7 @@ fi
 
 cp ../../all/generate/docker-compose.yml docker-compose.yml
 
-cp .openapi-generator-ignore output/.openapi-generator-ignore
+cp ${ignore_file:=.openapi-generator-ignore} output/.openapi-generator-ignore
 
 mv $sdk_name.json output/$sdk_name.json
 

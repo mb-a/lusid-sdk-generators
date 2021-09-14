@@ -1,0 +1,4 @@
+*.sln
+**/*.csproj
+**/Lusid.Drive.Sdk.Tests/**
+**/Lusid.Drive.Sdk/Utilities/**
