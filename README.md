@@ -46,6 +46,17 @@ If you would like to generate an SDK using a custom swagger.json file, please do
       -c drive.config.json \
       -i .drive.openapi-generator-ignore
     ```
+
+    ```
+    sh generate.sh \
+      -l csharp \
+      -u https://fbn-ci.lusid.com/scheduler2/swagger/v0/swagger.json \
+      -o ../../../scheduler-sdk-csharp \
+      -n scheduler \
+      -s scheduler.json \
+      -c scheduler.config.json \
+      -i .scheduler.openapi-generator-ignore
+    ```
     
     P.S. Please note you will need Docker installed and running to use the build.sh script
 ----

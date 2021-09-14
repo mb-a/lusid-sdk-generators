@@ -1,0 +1,4 @@
+*.sln
+**/*.csproj
+**/Lusid.Scheduler.Sdk.Tests/**
+**/Lusid.Scheduler.Sdk/Utilities/**
