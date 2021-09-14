@@ -44,7 +44,7 @@ If you would like to generate an SDK using a custom swagger.json file, please do
       -n drive \
       -s drive.json \
       -c drive.config.json \
-      -i .drive.openapi-generator-ignore
+      -i openapi-generator-ignore/.drive
     ```
 
     ```
@@ -55,7 +55,7 @@ If you would like to generate an SDK using a custom swagger.json file, please do
       -n scheduler \
       -s scheduler.json \
       -c scheduler.config.json \
-      -i .scheduler.openapi-generator-ignore
+      -i openapi-generator-ignore/.scheduler
     ```
     
     P.S. Please note you will need Docker installed and running to use the build.sh script
