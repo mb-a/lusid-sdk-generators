@@ -644,3 +644,8 @@ conf = {{{packageName}}}.Configuration(
         """Fix base path."""
         self._base_path = value
         self.server_index = None
+
+    @property
+    def pool_manager_fn(self):
+        """Return pool manager function."""
+        return self.pool_manager_fn
