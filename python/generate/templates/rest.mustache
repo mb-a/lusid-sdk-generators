@@ -80,8 +80,6 @@ class RESTClientObject(object):
                 maxsize=maxsize,
                 cert_reqs=cert_reqs,
                 ca_certs=ca_certs,
-                cert_file=configuration.cert_file,
-                key_file=configuration.key_file,
                 **addition_pool_args   
             )
         else:
