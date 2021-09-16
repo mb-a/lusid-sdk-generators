@@ -21,11 +21,11 @@ fi
 gen_root=$1
 output_folder=$2
 swagger_file=$output_folder/$3
-
+sdk_config=$4
 sdk_output_folder=$output_folder/sdk
 
 ignore_file_name=.openapi-generator-ignore
-config_file_name=config.json
+config_file_name="${sdk_config:=config.json}"
 config_file=$gen_root/$config_file_name
 ignore_file=$output_folder/$ignore_file_name
 
