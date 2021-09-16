@@ -1,6 +1,6 @@
 {
-  "packageName": "notifications",
-  "projectName": "notifications-sdk",
+  "packageName": "lusid_notifications",
+  "projectName": "lusid-notifications-sdk",
   "generateSourceCodeOnly": "generateSourceCodeOnly",
-  "packageVersion": "0.1.132"
+  "packageVersion": "0.1.133"
 }
