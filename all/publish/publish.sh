@@ -46,7 +46,10 @@ cd ./input
 
 ls
 
-docker run -v /$(pwd):/usr/src/ finbourne/lusid-sdk-$1-publish publish.sh $3 $4
+library_name=$5
+library_name=${library_name:=lusid}
+
+docker run -v /$(pwd):/usr/src/ finbourne/lusid-sdk-$1-publish publish.sh $3 $4 $library_name
 
 cd ../
 
