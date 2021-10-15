@@ -1,0 +1,6 @@
+{
+  "packageName": "lusid_configuration",
+  "projectName": "lusid-configuration-sdk",
+  "generateSourceCodeOnly": "generateSourceCodeOnly",
+  "packageVersion": "0.1.18"
+}
