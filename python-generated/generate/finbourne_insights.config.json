@@ -1,0 +1,6 @@
+{
+  "packageName": "finbourne_insights",
+  "projectName": "finbourne-insights-sdk",
+  "generateSourceCodeOnly": "generateSourceCodeOnly",
+  "packageVersion": "0.1.18"
+}
